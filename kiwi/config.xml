@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<image schemaversion="7.5" name="asahi-opensuse">
+    <description type="system">
+        <author>Mark</author>
+        <contact>me@email.com</contact>
+        <specification>openSUSE for Apple Silicon</specification>
+    </description>
+    <preferences>
+        <version>0.1.0</version>
+        <packagemanager>zypper</packagemanager>
+        <bootsplash-theme>bgrt</bootsplash-theme>
+        <bootloader-theme>openSUSE</bootloader-theme>
+        <locale>en_US</locale>
+        <keytable>us</keytable>
+	<timezone>UTC</timezone>
+        <rpm-check-signatures>true</rpm-check-signatures>
+        <rpm-excludedocs>true</rpm-excludedocs>
+        <type image="oem" filesystem="ext4" fsmountoptions="defaults" kernelcmdline="splash=silent quiet security=apparmor" firmware="uefi" bootpartition="true" bootpartsize="1024" bootfilesystem="ext4" efipartsize="512" target_blocksize="4096">
+            <bootloader name="grub2" console="gfxterm" timeout="3"/>
+            <oemconfig>
+		<oem-resize>false</oem-resize>
+                <oem-skip-verify>true</oem-skip-verify>
+	    </oemconfig>
+        </type>
+    </preferences>
+    <users>
+        <user pwdformat="plain" password="root" home="/root" name="root" groups="root"/>
+    </users>
+    <profiles>
+        <profile name="Tumbleweed" description="Tumbleweed base"/>
+        <profile name="Tumbleweed-KDE" description="Tumbleweed with KDE desktop">
+            <requires profile="Tumbleweed"/>
+        </profile>
+    </profiles>
+    <include from="this://./repos.xml"/>
+    <!-- Asahi repo -->
+	<repository type="rpm-md" alias="asahi"  priority="1" repository_gpgcheck="false" package_gpgcheck="false">
+		<source path="dir:///home/mrkcee/development/asahi-opensuse/repo/">
+		</source>
+	</repository>
+    <!-- <include from="this://./desktop.xml"/> -->
+    <packages type="bootstrap" profiles="Tumbleweed" patternType="plusRecommended">
+        <package name="patterns-base-base"/>
+        <package name="patterns-base-minimal_base"/>
+        <package name="patterns-base-enhanced_base"/>
+        <package name="patterns-base-documentation"/>
+        <package name="patterns-base-apparmor"/>
+        <package name="grub2"/>
+        <package name="grub2-arm64-efi" arch="aarch64"/>
+        <package name="grub2-branding-openSUSE"/>
+        <package name="grubby"/>
+        <package name="branding-openSUSE"/>
+        <package name="squashfs"/>
+        <package name="cron"/>
+        <package name="cronie"/>
+        <package name="chrony"/>
+        <package name="chrony-pool-openSUSE"/>
+        <package name="dracut"/>
+        <package name="dracut-kiwi-oem-repart"/>
+        <package name="zypper-lifecycle-plugin"/>
+        <package name="zypper-needs-restarting"/>
+        <package name="haveged"/>
+        <package name="tar"/>
+        <package name="7zip"/>
+        <package name="NetworkManager"/>
+        <package name="NetworkManager-branding-openSUSE"/>
+        <package name="NetworkManager-tui"/>
+        <package name="ntp"/>
+        <package name="pciutils"/>
+        <package name="kernel-asahi"/>
+	<package name="kernel-firmware-all"/>
+	<package name="lzfse"/>
+	<package name="plymouth"/>
+	<package name="plymouth-branding-openSUSE"/>
+	<package name="plymouth-dracut"/>
+	<package name="plymouth-theme-bgrt"/>
+	<package name="plymouth-theme-spinner"/>
+	<package name="yast2-firstboot"/>
+	<package name="systemd-zram-service"/>
+	<package name="zram-generator"/>
+	<package name="neofetch"/>
+    </packages>
+    <packages type="image"> 
+        <package name="m1n1"/>
+        <package name="uboot-asahi"/>
+        <package name="asahi-scripts"/>
+	<package name="asahi-fwextract"/>
+	<package name="speakersafetyd"/>
+        <package name="Mesa"/>
+        <package name="Mesa-dri"/>
+        <package name="Mesa-dri-asahi"/>
+	<package name="lsp-plugins"/>
+	<package name="bankstown-lv2"/>
+	<package name="asahi-audio"/>
+	<package name="wireplumber"/>
+	<package name="libwireplumber-0_4-0"/>
+    </packages>
+    <packages type="image" profiles="Tumbleweed-KDE"> 
+	<package name="patterns-kde-kde_plasma"/>
+	<package name="plasma6-branding-openSUSE"/>
+	<package name="konsole"/>
+	<package name="sddm"/>
+	<package name="sddm-branding-openSUSE"/>
+	<package name="sddm-qt6-branding-openSUSE"/>
+	<package name="hicolor-icon-theme-branding-openSUSE"/>
+	<package name="opensuse-welcome"/>
+	<package name="partitionamanager"/>
+	<package name="ark"/>
+    </packages>
+</image>

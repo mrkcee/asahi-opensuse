@@ -1,20 +1,25 @@
 # asahi-opensuse
 
-WILL NOT BE FINISHED BY ME (NOT ENOUGH TIME AND DESIRE)
+This repository contains kiwi configs and rpmbuild specs file in order to install openSUSE Tumbleweed to an Apple Silicon laptop. Currently, I don't plan on releasing images and ppackages for installation of others as this requires commitment and dedication.
 
-> Port of openSUSE for Apple Silicon
-
-Currently I'm working on openSUSE port for Apple Silicon machines.
+_**Please use at your own risk**_.
 
 
-## Current progress
+# Current State
 
-[TODO](./TODO.md)
+I am currently running openSUSE Tumbleweed on an Apple Macbook Air M1 (2020).
 
-## How to use in current condition
 
-[DOCS](./DOCS.md)
+# Todo
 
-## Contact me
+[ ] Cleanup spec files
+[ ] Automate post-installation configs (eg. resize2fs)
 
-Email: <ivabus@ivabus.dev>
+
+# Big thanks to the following:
+- Ivanseb - for the initial configs
+- Fedora Asahi SIG Team - basis of some specs
+- tpwrules / NixOS on Apple Silicon - basis of some specs
+- openSUSE maintainers - basis of some specs
+- Asahi Linux team - for creating Asahi Linux and other modules
+
