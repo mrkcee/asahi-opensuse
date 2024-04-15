@@ -1,6 +1,0 @@
-[asahi]
-name=asahi
-baseurl=https://storage.ivabus.dev/asahi-opensuse/repo
-enabled=1
-gpgcheck=0
-gpgkey=https://ivabus.dev/key.asc
