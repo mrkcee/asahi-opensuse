@@ -13,7 +13,7 @@ I am currently running openSUSE Tumbleweed on an Apple Macbook Air M1 (2020).
 # Todo
 
 - [ ] Cleanup spec files
-- Automate post-installation configs
+- [ ] Automate post-installation configs
   - [ ] resize2fs
   - [ ] Swap file creation
 
