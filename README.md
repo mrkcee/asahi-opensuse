@@ -1,6 +1,6 @@
 # asahi-opensuse
 
-This repository contains kiwi configs and rpmbuild spec files in order to install openSUSE Tumbleweed to an Apple Silicon laptop. Currently, I don't plan on releasing images and packages for installation of others as this requires commitment and dedication.
+This repository contains kiwi configs and rpmbuild spec files in order to install openSUSE Tumbleweed to an Apple Silicon machine. Currently, I don't plan on releasing images and packages for installation of others as these require commitment and dedication.
 
 _**Please use at your own risk**_.
 
@@ -13,7 +13,9 @@ I am currently running openSUSE Tumbleweed on an Apple Macbook Air M1 (2020).
 # Todo
 
 - [ ] Cleanup spec files
-- [ ] Automate post-installation configs (eg. resize2fs)
+- Automate post-installation configs
+  - [ ] resize2fs
+  - [ ] Swap file creation
 
 
 # Big thanks to the following:
