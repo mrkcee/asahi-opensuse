@@ -13,15 +13,15 @@
         <bootloader-theme>openSUSE</bootloader-theme>
         <locale>en_US</locale>
         <keytable>us</keytable>
-	<timezone>UTC</timezone>
+				<timezone>UTC</timezone>
         <rpm-check-signatures>true</rpm-check-signatures>
         <rpm-excludedocs>true</rpm-excludedocs>
         <type image="oem" filesystem="ext4" fsmountoptions="defaults" kernelcmdline="splash=silent quiet security=apparmor" firmware="uefi" bootpartition="true" bootpartsize="1024" bootfilesystem="ext4" efipartsize="512" target_blocksize="4096">
             <bootloader name="grub2" console="gfxterm" timeout="3"/>
             <oemconfig>
-		<oem-resize>false</oem-resize>
+								<oem-resize>false</oem-resize>
                 <oem-skip-verify>true</oem-skip-verify>
-	    </oemconfig>
+						</oemconfig>
         </type>
     </preferences>
     <users>
@@ -35,10 +35,10 @@
     </profiles>
     <include from="this://./repos.xml"/>
     <!-- Asahi repo -->
-	<repository type="rpm-md" alias="asahi"  priority="1" repository_gpgcheck="false" package_gpgcheck="false">
-		<source path="dir:///home/mrkcee/development/asahi-opensuse/repo/">
-		</source>
-	</repository>
+		<repository type="rpm-md" alias="asahi"  priority="1" repository_gpgcheck="false" package_gpgcheck="false">
+				<source path="dir:///home/mrkcee/development/asahi-opensuse/repo/">
+				</source>
+		</repository>
     <!-- <include from="this://./desktop.xml"/> -->
     <packages type="bootstrap" profiles="Tumbleweed" patternType="plusRecommended">
         <package name="patterns-base-base"/>
@@ -69,43 +69,66 @@
         <package name="ntp"/>
         <package name="pciutils"/>
         <package name="kernel-asahi"/>
-	<package name="kernel-firmware-all"/>
-	<package name="lzfse"/>
-	<package name="plymouth"/>
-	<package name="plymouth-branding-openSUSE"/>
-	<package name="plymouth-dracut"/>
-	<package name="plymouth-theme-bgrt"/>
-	<package name="plymouth-theme-spinner"/>
-	<package name="yast2-firstboot"/>
-	<package name="systemd-zram-service"/>
-	<package name="zram-generator"/>
-	<package name="neofetch"/>
+				<package name="kernel-firmware-all"/>
+				<package name="lzfse"/>
+				<package name="plymouth"/>
+				<package name="plymouth-branding-openSUSE"/>
+				<package name="plymouth-dracut"/>
+				<package name="plymouth-theme-bgrt"/>
+				<package name="plymouth-theme-spinner"/>
+				<package name="yast2-firstboot"/>
+				<package name="systemd-zram-service"/>
+				<package name="neofetch"/>
     </packages>
     <packages type="image"> 
         <package name="m1n1"/>
         <package name="uboot-asahi"/>
         <package name="asahi-scripts"/>
-	<package name="asahi-fwextract"/>
-	<package name="speakersafetyd"/>
+				<package name="asahi-fwextract"/>
+				<package name="speakersafetyd"/>
         <package name="Mesa"/>
         <package name="Mesa-dri"/>
         <package name="Mesa-dri-asahi"/>
-	<package name="lsp-plugins"/>
-	<package name="bankstown-lv2"/>
-	<package name="asahi-audio"/>
-	<package name="wireplumber"/>
-	<package name="libwireplumber-0_4-0"/>
+				<!-- lsp-plugins >= 1.2.14 -->
+				<package name="lsp-plugins"/>
+				<package name="bankstown-lv2"/>
+				<!-- asahi-audio 1.x - wireplumber 0.4.x -->
+				<package name="asahi-audio"/>
+				<package name="pipewire"/>
+				<package name="wireplumber"/>
+				<package name="libwireplumber-0_4-0"/>
     </packages>
     <packages type="image" profiles="Tumbleweed-KDE"> 
-	<package name="patterns-kde-kde_plasma"/>
-	<package name="plasma6-branding-openSUSE"/>
-	<package name="konsole"/>
-	<package name="sddm"/>
-	<package name="sddm-branding-openSUSE"/>
-	<package name="sddm-qt6-branding-openSUSE"/>
-	<package name="hicolor-icon-theme-branding-openSUSE"/>
-	<package name="opensuse-welcome"/>
-	<package name="partitionamanager"/>
-	<package name="ark"/>
+				<package name="patterns-kde-kde_plasma"/>
+				<package name="patterns-kde-kde_yast"/>
+				<package name="plasma6-branding-openSUSE"/>
+				<package name="konsole"/>
+				<package name="sddm"/>
+				<package name="sddm-branding-openSUSE"/>
+				<package name="sddm-qt6-branding-openSUSE"/>
+				<package name="hicolor-icon-theme-branding-openSUSE"/>
+				<package name="opensuse-welcome"/>
+				<package name="partitionmanager"/>
+				<package name="ark"/>
+				<package name="spectacle"/>
+				<package name="kcalc"/>
+				<package name="kamoso"/>
+				<package name="kolourpaint"/>
+				<package name="filelight"/>
+				<package name="gwenview"/>
+				<package name="okular"/>
+				<package name="libreoffice"/>
+				<package name="libreoffice-writer"/>
+				<package name="libreoffice-calc"/>
+				<package name="libreoffice-impress"/>
+				<package name="libreoffice-qt5"/>
+				<package name="libreoffice-icon-themes"/>
+				<package name="libreoffice-branding-openSUSE"/>
     </packages>
+		<packages type="uninstall">
+				<package name="xterm"/>
+				<package name="tigervnc"/>
+				<package name="libXvnc1"/>
+				<package name="vlc"/>
+		</packages>
 </image>
