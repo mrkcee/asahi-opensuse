@@ -5,11 +5,13 @@ Summary:        Linux userspace audio configurations for Apple Silicon
 
 License:        MIT
 URL:            https://github.com/AsahiLinux/asahi-audio
+Vendor:         Asahi Linux Contributors
 Source0:        %{name}-%{version}.tar.gz
-Requires:       wireplumber >= 0.5.0
+Requires:       wireplumber >= 0.5.2
 Requires:       pipewire >= 1.0.0
 Requires:       bankstown-lv2 >= 1.1.0
-Requires:       lsp-plugins >= 1.0.20
+# it is actually 1.0.20 but 1.2.14 contains the fixes that affects asahi
+Requires:       lsp-plugins >= 1.2.14
 Requires:       speakersafetyd 
 Requires:       kernel-asahi
 Provides:       asahi-audio = %{version}-%{release}

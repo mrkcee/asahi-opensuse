@@ -5,6 +5,7 @@ Summary:        Miscellaneous scripts for Asahi Linux
 
 License:        MIT
 URL:            https://github.com/AsahiLinux/asahi-installer
+Vendor:         Asahi Linux Contributors
 Source0:        asahi-installer-0.7.1.tar.gz
 
 BuildArch:      noarch

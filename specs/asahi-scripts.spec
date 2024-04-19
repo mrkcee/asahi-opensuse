@@ -5,6 +5,7 @@ Summary:        Miscellaneous scripts for Asahi Linux
 
 License:        MIT
 URL:            https://github.com/AsahiLinux/asahi-scripts
+Vendor:         Asahi Linux Contributors
 Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires:  systemd-rpm-macros
