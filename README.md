@@ -9,6 +9,7 @@ _**Please use at your own risk**_.
 
 I am currently running openSUSE Tumbleweed on an Apple Macbook Air M1 (2020).
 
+![openSUSE Tumbleweed on MBA M1](./images/asahi-tumbleweed-mba-m1.png)
 
 ## Todo
 
