@@ -25,7 +25,6 @@ rm -f /var/lib/systemd/random-seed
 #======================================
 # Setup default services
 #--------------------------------------
-
 systemctl enable NetworkManager.service
 systemctl enable chronyd.service
 systemctl enable sddm.service
@@ -46,10 +45,10 @@ touch /var/lib/YaST2/reconfig_system
 mkdir -p /boot/efi/m1n1
 update-m1n1 /boot/efi/m1n1/boot.bin
 rm -rf /boot/.builder
+
 #======================================
-# Regenerate initrds
+# Update GRUB2
 #--------------------------------------
-#mkinitrd
 grub2-mkconfig -o /boot/grub2/grub.cfg
 
 #======================================

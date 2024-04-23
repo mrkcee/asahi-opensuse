@@ -12,6 +12,10 @@
 	<repository type="rpm-md" alias="repo-src-oss" profiles="Tumbleweed">
 		<source path="http://download.opensuse.org/ports/aarch64/source/tumbleweed/repo/oss/"/>
 	</repository>
+  <!-- openh264 repository -->
+	<repository type="rpm-md" alias="openh264" profiles="Tumbleweed" imageinclude="true">
+		<source path="http://codecs.opensuse.org/openh264/openSUSE_Tumbleweed/"/>
+	</repository>
 
 	<!-- Leap repositories -->
 	<repository type="rpm-md" alias="repo-oss" profiles="Leap">

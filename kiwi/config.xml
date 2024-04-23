@@ -35,11 +35,10 @@
     </profiles>
     <include from="this://./repos.xml"/>
     <!-- Asahi repo -->
-		<repository type="rpm-md" alias="asahi"  priority="1" repository_gpgcheck="false" package_gpgcheck="false">
+		<repository type="rpm-md" alias="asahi"  priority="1" repository_gpgcheck="false" package_gpgcheck="false" imageinclude="true">
 				<source path="dir:///home/mrkcee/development/asahi-opensuse/repo/">
 				</source>
 		</repository>
-    <!-- <include from="this://./desktop.xml"/> -->
     <packages type="bootstrap" profiles="Tumbleweed" patternType="plusRecommended">
         <package name="patterns-base-base"/>
         <package name="patterns-base-minimal_base"/>
@@ -97,6 +96,8 @@
 				<package name="pipewire"/>
 				<package name="wireplumber"/>
 				<package name="libwireplumber-0_4-0"/>
+				<package name="libopenh264-7"/>
+				<package name="gstreamer-plugin-openh264"/>
     </packages>
     <packages type="image" profiles="Tumbleweed-KDE"> 
 				<package name="patterns-kde-kde_plasma"/>
@@ -108,6 +109,7 @@
 				<package name="sddm-qt6-branding-openSUSE"/>
 				<package name="hicolor-icon-theme-branding-openSUSE"/>
 				<package name="opensuse-welcome"/>
+				<package name="mozilla-openh264"/>
 				<package name="partitionmanager"/>
 				<package name="ark"/>
 				<package name="spectacle"/>
