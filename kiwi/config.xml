@@ -92,6 +92,7 @@
 				<package name="lsp-plugins"/>
 				<package name="bankstown-lv2"/>
 				<package name="asahi-audio"/>
+				<package name="alsa-ucm-conf-asahi"/>
 				<package name="pipewire"/>
 				<package name="wireplumber"/>
 				<package name="libopenh264-7"/>
