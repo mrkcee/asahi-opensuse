@@ -91,11 +91,9 @@
 				<!-- lsp-plugins >= 1.2.14 -->
 				<package name="lsp-plugins"/>
 				<package name="bankstown-lv2"/>
-				<!-- asahi-audio 1.x - wireplumber 0.4.x -->
 				<package name="asahi-audio"/>
 				<package name="pipewire"/>
 				<package name="wireplumber"/>
-				<package name="libwireplumber-0_4-0"/>
 				<package name="libopenh264-7"/>
 				<package name="gstreamer-plugin-openh264"/>
     </packages>

@@ -1,19 +1,21 @@
 Name:           asahi-audio
-Version:        1.8
-Release:        1
+Version:        2.0
+Release:        2
 Summary:        Linux userspace audio configurations for Apple Silicon
 
 License:        MIT
-URL:            https://github.com/AsahiLinux/chadmed
+URL:            https://github.com/AsahiLinux/asahi-audio
+Vendor:         Asahi Linux Contributors
 Source0:        %{name}-%{version}.tar.gz
-Requires:       wireplumber < 0.5.0
+Requires:       wireplumber >= 0.5.2
 Requires:       pipewire >= 1.0.0
 Requires:       bankstown-lv2 >= 1.1.0
-Requires:       lsp-plugins >= 1.0.20
+# it is actually 1.0.20 but 1.2.14 contains the fixes that affects asahi
+Requires:       lsp-plugins >= 1.2.14
 Requires:       speakersafetyd 
 Requires:       kernel-asahi
 Provides:       asahi-audio = %{version}-%{release}
-Obsoletes:      asahi-audio <= 1.8
+Obsoletes:      asahi-audio < 2.0
 BuildArch:      noarch
 
 %description
@@ -38,9 +40,7 @@ make %{?_smp_mflags} DESTDIR=%{buildroot} install
 %defattr (-, root, root)
 /usr/share/asahi-audio
 /usr/share/wireplumber/wireplumber.conf.d/99-asahi.conf
-/usr/share/wireplumber/policy.lua.d/85-asahi-policy.lua
-/usr/share/wireplumber/main.lua.d/85-asahi.lua
-/usr/share/wireplumber/scripts/policy-asahi.lua
+/usr/share/wireplumber/scripts/device/asahi-limit-volume.lua
 /usr/share/pipewire/pipewire.conf.d/99-asahi.conf
 /usr/share/pipewire/pipewire-pulse.conf.d/99-asahi.conf
 
