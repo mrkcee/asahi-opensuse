@@ -1,6 +1,8 @@
 # asahi-opensuse
 
-This repository contains kiwi configs and rpmbuild spec files in order to install openSUSE Tumbleweed to an Apple Silicon machine. Currently, I don't plan on releasing images and packages for installation of others as these require commitment and dedication. This repository primarily serves as backup for me but hopefully it will be useful for others.
+This repository contains kiwi configs and rpmbuild spec files in order to install openSUSE Tumbleweed to an Apple Silicon machine. I don't plan on releasing images and packages for installation of others as these require commitment and dedication. This repository **primarily serves as backup for me** but hopefully it will be useful for others.
+
+If you intend to use these to install a daily driver system, I **HIGHLY RECOMMEND** to just use the official Fedora Asahi Remix release or any of the distributions in this list: ![Alternative Distros](https://github.com/AsahiLinux/docs/wiki/SW%3AAlternative-Distros). It will save yourself from issues and headaches as the files here need more polishing and rigourous testing.
 
 _**Please use at your own risk**_.
 
@@ -43,4 +45,5 @@ Good luck :D
 - openSUSE maintainers - basis of some specs
 - SUSE - for openSUSE
 - Asahi Linux team and contributors - for creating Asahi Linux and other modules
+- Folks who have provided their feedback and constructive comments
 
