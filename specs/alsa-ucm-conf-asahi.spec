@@ -24,11 +24,11 @@ ALSA Use Case Manager configuration (and topologies) for Apple silicon devices
 %build
 
 %install
-mkdir -p %{buildroot}/usr/share/alsa/ucm2/conf.d
-cp -av ucm2/conf.d/macaudio %{buildroot}/usr/share/alsa/ucm2/conf.d
+mkdir -p %{buildroot}%{_datadir}/alsa/ucm2/conf.d
+cp -av ucm2/conf.d/macaudio %{buildroot}%{_datadir}/alsa/ucm2/conf.d
 
 %files
 %defattr (-, root, root)
-/usr/share/alsa/ucm2/conf.d/macaudio
+%{_datadir}/alsa/ucm2/conf.d/macaudio
 
 %changelog

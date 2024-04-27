@@ -5,7 +5,7 @@
 Name: kernel-asahi
 Summary: The Linux Kernel
 Version: 6.8.6
-Release: 3
+Release: 4
 License: GPL
 Group: System Environment/Kernel
 Vendor: The Linux Community
@@ -48,6 +48,8 @@ The standard kernel for both uniprocessor and multiprocessor systems.
 # how the kernel release string (uname -r) should look like
 %define unametag -asahi-%{_asahirel}-%{release}
 %define kernelrelease %{version}%{unametag}
+
+%define dtbdir /boot/dtb-%{kernelrelease}
 
 # aarch64 as a fallback of _arch in case
 # /usr/lib/rpm/platform/*/macros was not included.
@@ -122,7 +124,7 @@ cp .config %{buildroot}/boot/config-%{kernelrelease}
 rm -f %{buildroot}/usr/lib/modules/%{kernelrelease}/build
 mkdir -p %{buildroot}/usr/src/kernels/%{kernelrelease}
 make INSTALL_PATH=. dtbs_install
-install -Dpm 755 -t %{buildroot}/usr/lib/modules/%{kernelrelease}-ARCH/dtbs/ $(find dtbs/ -type f)
+install -Dpm 755 -t %{buildroot}%{dtbdir}/apple/ $(find dtbs/ -type f)
 tar cf - --exclude SCCS --exclude BitKeeper --exclude .svn --exclude CVS --exclude .pc --exclude .hg --exclude .git --exclude=*vmlinux* --exclude=*.mod --exclude=*.o --exclude=*.ko --exclude=*.cmd --exclude=Documentation --exclude=.config.old --exclude=.missing-syscalls.d --exclude=*.s . | tar xf - -C %{buildroot}/usr/src/kernels/%{kernelrelease}
 
 %pre
@@ -153,7 +155,29 @@ fi
 /boot/Image-%{kernelrelease}
 /boot/System.map-%{kernelrelease}
 /usr/lib/modules/%{kernelrelease}
-/usr/lib/modules/%{kernelrelease}-ARCH/
+
+%package -n dtb-apple
+Summary:        Apple Silicon SOC based arm64 systems
+Group:          System/Boot
+Provides:       multiversion(dtb)
+Requires(post): coreutils
+
+%description -n dtb-apple
+Device Tree files for Apple Silicon SOC based arm64 systems
+
+%post -n dtb-apple
+cd /boot
+# If /boot/dtb is a symlink, remove it, so that we can replace it.
+[ -d dtb ] && [ -L dtb ] && rm -f dtb
+# Unless /boot/dtb exists as real directory, create a symlink.
+[ -d dtb ] || ln -sf dtb-%{kernelrelease} dtb
+
+%files -n dtb-apple
+%defattr(-,root,root)
+%ghost /boot/dtb
+%dir %{dtbdir}
+%dir %{dtbdir}/apple
+%{dtbdir}/apple/*.dtb
 
 %package devel
 Summary: Development package for building kernel modules to match the %{version} asahi kernel

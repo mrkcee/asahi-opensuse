@@ -1,6 +1,6 @@
 Name:           m1n1
 Version:        1.4.11
-Release:        1
+Release:        2
 Summary:        Bootloader and experimentation playground for Apple Silicon
 
 # m1n1 proper is MIT licensed, but it relies on a number of vendored projects
@@ -40,21 +40,20 @@ m1n1 is the bootloader developed by the Asahi Linux project to bridge the Apple
 (XNU) boot ecosystem to the Linux boot ecosystem.
 
 %prep
-tar xpvf %{_sourcedir}/%{name}-%{version}.tar.gz
+%setup -n %{name}-%{version}
 
 %build
-cd %{name}-%{version}
 %make_build %{buildflags}
 
 %install
-install -Dpm0644 -t %{buildroot}/usr/lib/asahi-boot %{name}-%{version}/build/%{name}.bin
+install -Dpm0644 -t %{buildroot}/%{_libdir}/%{name} build/%{name}.{bin,macho}
+#install -Ddpm0755 %{buildroot}%{_libexecdir}/%{name}
+#install -Dpm0644 -t %{buildroot}%{_udevrulesdir} udev/80-m1n1.rules
 
 %files
-%license %{name}-%{version}/LICENSE %{name}-%{version}/3rdparty_licenses/LICENSE.*
-%doc %{name}-%{version}/README.md
-/usr/lib/asahi-boot/m1n1.bin
-
-%posttrans
-update-m1n1
+%license LICENSE 3rdparty_licenses/LICENSE.*
+%doc README.md
+%{_libdir}/%{name}
+#%{_udevrulesdir}/80-m1n1.rules
 
 %changelog

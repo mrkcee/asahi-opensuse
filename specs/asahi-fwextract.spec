@@ -1,6 +1,6 @@
 Name:           asahi-fwextract
 Version:        0.7.1
-Release:        1
+Release:        2
 Summary:        Miscellaneous scripts for Asahi Linux
 
 License:        MIT
@@ -9,6 +9,9 @@ Vendor:         Asahi Linux Contributors
 Source0:        asahi-installer-0.7.1.tar.gz
 
 BuildArch:      noarch
+
+Provides:       asahi-fwextract = %{version}-%{release}
+Obsoletes:      asahi-fwextract < 0.7.1
 
 %description
 This package contains miscellaneous admin scripts for the Asahi Linux reference
