@@ -1,11 +1,11 @@
 Name:           asahi-fwextract
 Version:        0.7.1
-Release:        2
-Summary:        Miscellaneous scripts for Asahi Linux
+Release:        3
+Summary:        Asahi Linux firmware extractor
 
 License:        MIT
 URL:            https://github.com/AsahiLinux/asahi-installer
-Vendor:         Asahi Linux Contributors
+Vendor:         asahi-opensuse
 Source0:        asahi-installer-0.7.1.tar.gz
 
 BuildArch:      noarch
@@ -14,8 +14,7 @@ Provides:       asahi-fwextract = %{version}-%{release}
 Obsoletes:      asahi-fwextract < 0.7.1
 
 %description
-This package contains miscellaneous admin scripts for the Asahi Linux reference
-distro.
+Asahi Linux firmware extractor
 
 %prep
 %setup -n asahi-installer-%{version}

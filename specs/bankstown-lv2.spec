@@ -1,10 +1,11 @@
 Name:           bankstown-lv2
 Version:        1.1.0
-Release:        1
+Release:        2
 Summary:        A barebones bass enhancer
 
 License:        MIT
 URL:            https://github.com/chadmed/bankstown
+Vendor:         asahi-opensuse
 Source0:        bankstown-lv2-%{version}.tar.gz
 
 %description
@@ -30,6 +31,7 @@ rm -rf %{buildroot}
 
 %files
 %defattr (-, root, root)
+%license LICENSE
 /usr/lib64/lv2/bankstown.lv2/bankstown.so
 /usr/lib64/lv2/bankstown.lv2/bankstown.ttl
 /usr/lib64/lv2/bankstown.lv2/manifest.ttl

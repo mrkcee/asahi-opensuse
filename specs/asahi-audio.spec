@@ -1,11 +1,11 @@
 Name:           asahi-audio
 Version:        2.0
-Release:        2
+Release:        3
 Summary:        Linux userspace audio configurations for Apple Silicon
 
 License:        MIT
 URL:            https://github.com/AsahiLinux/asahi-audio
-Vendor:         Asahi Linux Contributors
+Vendor:         asahi-opensuse
 Source0:        %{name}-%{version}.tar.gz
 Requires:       wireplumber >= 0.5.2
 Requires:       pipewire >= 1.0.0

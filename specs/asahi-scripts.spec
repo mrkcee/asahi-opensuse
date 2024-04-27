@@ -1,11 +1,11 @@
 Name:           asahi-scripts
 Version:        20240411
-Release:        2
+Release:        3
 Summary:        Miscellaneous scripts for Asahi Linux
 
 License:        MIT
 URL:            https://github.com/AsahiLinux/asahi-scripts
-Vendor:         Asahi Linux Contributors
+Vendor:         asahi-opensuse
 Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
 Source1:        update-m1n1.sysconfig
 
@@ -21,7 +21,7 @@ Requires:       asahi-fwextract
 BuildArch:      noarch
 
 Provides:       %{name} = %{version}-%{release}
-Obsoletes:      asahi-scripts < 20240411-2
+Obsoletes:      asahi-scripts < 20240411
 
 %description
 This package contains miscellaneous admin scripts for the Asahi Linux reference
@@ -79,6 +79,7 @@ grep -q 'asahi_firmware' && %{_bindir}/asahi-fwupdate || :
 %{_sysconfdir}/sysconfig/update-m1n1
 
 %files
+%license LICENSE
 %{_bindir}/asahi-diagnose
 %{_datadir}/asahi-scripts/functions.sh
 %{_prefix}/lib/dracut.conf.d/10-asahi.conf

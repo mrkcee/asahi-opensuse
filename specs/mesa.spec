@@ -129,12 +129,14 @@
 
 Name:           Mesa%{psuffix}
 Version:        24.1.0
-Release:        0
+Release:        1
 Summary:        System for rendering 3-D graphics
 License:        MIT
 Group:          System/Libraries
 URL:            https://www.mesa3d.org
 Source0:        https://gitlab.freedesktop.org/asahi/mesa/-/archive/%{git_tag}/mesa-%{git_tag}.tar.gz
+Patch0:         n_add-Mesa-headers-again.patch
+Vendor:         asahi-opensuse
 
 %ifarch %{ix86} x86_64
 BuildRequires:  DirectX-Headers
@@ -749,8 +751,11 @@ programs against the XA state tracker.
 
 %prep
 %setup -q -n %{_name_archive}-asahi-%{asahi_mesa_ver}
+%patch 0
 # remove some docs
 rm -rf docs/README.{VMS,WIN32,OS2}
+
+echo %flavor
 
 # Remove requires to vulkan libs from baselibs.conf on platforms
 # where vulkan build is disabled; ugly ...
@@ -881,23 +886,23 @@ rm -f %{buildroot}/%{_libdir}/pkgconfig/wayland-egl.pc
 
 rm -f %{buildroot}/%{_libdir}/libEGL.so*
 # in Mesa-libEGL-devel
-#rm %{buildroot}/%{_includedir}/EGL/egl.h
-#rm %{buildroot}/%{_includedir}/EGL/eglext.h
+rm %{buildroot}/%{_includedir}/EGL/egl.h
+rm %{buildroot}/%{_includedir}/EGL/eglext.h
 rm %{buildroot}/%{_includedir}/EGL/eglext_angle.h
 rm %{buildroot}/%{_includedir}/EGL/eglmesaext.h
-#rm %{buildroot}/%{_includedir}/EGL/eglplatform.h
+rm %{buildroot}/%{_includedir}/EGL/eglplatform.h
 
 # in Mesa-libGL-devel
 rm -rf %{buildroot}/%{_includedir}/GL
 
 #in Mesa-libGLESv1_CM-devel
-#rm -rf %{buildroot}/%{_includedir}/GLES
+rm -rf %{buildroot}/%{_includedir}/GLES
 
 #in Mesa-libGLESv2-devel
-#rm -rf %{buildroot}/%{_includedir}/GLES2
+rm -rf %{buildroot}/%{_includedir}/GLES2
 
 #in Mesa-libGLESv3-devel
-#rm -rf %{buildroot}/%{_includedir}/GLES3
+rm -rf %{buildroot}/%{_includedir}/GLES3
 
 #in Mesa-libEGL1
 rm -f %{buildroot}/%{_libdir}/libEGL_mesa.so*
@@ -914,7 +919,7 @@ rm -f %{buildroot}/%{_libdir}/pkgconfig/wayland-egl.pc
 rm %{buildroot}/%{_libdir}/pkgconfig/dri.pc
 
 # in KHR-devel
-#rm -rf %{buildroot}/%{_includedir}/KHR
+rm -rf %{buildroot}/%{_includedir}/KHR
 
 # workaround needed since Mesa 19.0.2
 rm -f %{buildroot}/%{_libdir}/vdpau/libvdpau_gallium.so
@@ -932,7 +937,7 @@ ln -s %{_libdir}/libGLX_mesa.so.0 %{buildroot}%{_libdir}/libGLX_indirect.so.0
 
 # pickup pkgconfig files from libglvnd build
 rm -f %{buildroot}/%{_libdir}/pkgconfig/{gl,egl,glesv1_cm,glesv2}.pc
-install -m 0644 /usr/share/doc/packages/libglvnd/pkgconfig/{gl,egl,glesv1_cm,glesv2}.pc \
+install -m 0644 %{_libdir}/pkgconfig/{gl,egl,glesv1_cm,glesv2}.pc \
    %{buildroot}/%{_libdir}/pkgconfig/
 
 #for dir in ../xc/doc/man/{GL/gl,GL/glx}; do
@@ -940,7 +945,7 @@ install -m 0644 /usr/share/doc/packages/libglvnd/pkgconfig/{gl,egl,glesv1_cm,gle
 #   xmkmf -a
 #   make %{?_smp_mflags} V=1
 #   make install.man DESTDIR=%{buildroot} MANPATH=%{_mandir} LIBMANSUFFIX=3gl
-# popd
+#popd
 #done
 %endif
 
@@ -998,8 +1003,8 @@ echo "The \"Mesa\" package does not have the ability to render, but is supplemen
 %{_includedir}/EGL
 %{_libdir}/pkgconfig/egl.pc
 
-#%files KHR-devel
-#%{_includedir}/KHR
+%files KHR-devel
+%{_includedir}/KHR
 
 %files libGL1
 %{_libdir}/libGLX_mesa.so*
@@ -1013,15 +1018,15 @@ echo "The \"Mesa\" package does not have the ability to render, but is supplemen
 #%{_mandir}/man3/gl[A-Z]*
 
 %files libGLESv1_CM-devel
-#%{_includedir}/GLES
+%{_includedir}/GLES
 %{_libdir}/pkgconfig/glesv1_cm.pc
 
 %files libGLESv2-devel
-#%{_includedir}/GLES2
+%{_includedir}/GLES2
 %{_libdir}/pkgconfig/glesv2.pc
 
-#%files libGLESv3-devel
-#%{_includedir}/GLES3
+%files libGLESv3-devel
+%{_includedir}/GLES3
 
 %files -n libOSMesa8
 %{_libdir}/libOSMesa.so.8.0.0

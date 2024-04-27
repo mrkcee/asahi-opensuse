@@ -1,10 +1,12 @@
 Name:           uboot-asahi
 Version:        2023.07.02
-Release:        5
+Release:        6
 Summary:        U-Boot for Apple Silicon Macs
 License:        GPLv3+
 URL:            https://github.com/AsahiLinux
 BuildArch:      aarch64
+Vendor:         asahi-opensuse
+
 %define ubootasahirel 4
 %define debug_package %{nil}
 %define uboot_commit_id asahi-v%{version}-%{ubootasahirel}

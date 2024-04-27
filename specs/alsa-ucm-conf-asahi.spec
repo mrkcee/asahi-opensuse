@@ -1,12 +1,13 @@
 Name:           alsa-ucm-conf-asahi
 Version:        5
-Release:        1
+Release:        2
 Summary:        ALSA Use Case Manager configuration (and topologies) for Apple silicon devices
 
 License:        MIT
 URL:            https://asahilinux.org
-Vendor:         Asahi Linux Contributors
+Vendor:         asahi-opensuse
 Source0:        %{name}-%{version}.tar.gz
+Provides:       %{name} = %{version}-%{release}
 BuildArch:      noarch
 
 %description
@@ -29,6 +30,7 @@ cp -av ucm2/conf.d/macaudio %{buildroot}%{_datadir}/alsa/ucm2/conf.d
 
 %files
 %defattr (-, root, root)
+%license LICENSE.asahi
 %{_datadir}/alsa/ucm2/conf.d/macaudio
 
 %changelog

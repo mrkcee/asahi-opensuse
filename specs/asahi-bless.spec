@@ -1,13 +1,15 @@
 Name:           asahi-bless
 Version:        0.3.0
-Release:        1
+Release:        2
 Summary:        Tool to select active boot partition on Apple Silicon
 
 License:        MIT
 URL:            https://crates.io/crates/asahi-bless
+Vendor:         asahi-opensuse
 Source0:        %{name}-%{version}.tar.gz
 
 BuildRequires:  cargo-packaging
+Provides:       %{name} = %{version}-%{release}
 
 %description
 A tool to select active boot partition on Apple Silicon

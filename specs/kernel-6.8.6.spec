@@ -5,10 +5,10 @@
 Name: kernel-asahi
 Summary: The Linux Kernel
 Version: 6.8.6
-Release: 4
+Release: 5
 License: GPL
 Group: System Environment/Kernel
-Vendor: The Linux Community
+Vendor: asahi-opensuse
 URL: https://www.kernel.org
 Source0: https://github.com/AsahiLinux/linux/archive/refs/tags/%{_tag_id}.tar.gz
 Source1: config-asahi-%{version}-%{_asahirel}
