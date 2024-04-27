@@ -15,9 +15,12 @@
         <keytable>us</keytable>
 				<timezone>UTC</timezone>
         <rpm-check-signatures>true</rpm-check-signatures>
-        <rpm-excludedocs>true</rpm-excludedocs>
-        <type image="oem" filesystem="ext4" fsmountoptions="defaults" kernelcmdline="splash=silent quiet security=apparmor" firmware="uefi" bootpartition="true" bootpartsize="1024" bootfilesystem="ext4" efipartsize="512" target_blocksize="4096">
+        <type image="oem" filesystem="btrfs" fsmountoptions="x-systemd.growfs,compress=zstd:1" kernelcmdline="splash=silent quiet security=apparmor" firmware="uefi" bootpartition="true" bootpartsize="1024" bootfilesystem="ext4" efipartsize="512" target_blocksize="4096" btrfs_root_is_subvolume="true" btrfs_set_default_volume="false" rootfs_label="opensuse">
             <bootloader name="grub2" console="gfxterm" timeout="3"/>
+            <systemdisk name="opensuse">
+                <volume name="@root=root"/>
+                <volume name="home" parent="/"/>
+            </systemdisk>
             <oemconfig>
 								<oem-resize>false</oem-resize>
                 <oem-skip-verify>true</oem-skip-verify>
@@ -79,6 +82,12 @@
 				<package name="yast2-firstboot"/>
 				<package name="systemd-zram-service"/>
 				<package name="neofetch"/>
+        <!-- btrfs -->
+        <package name="btrfsprogs"/>
+        <package name="btrfsmaintenance"/>
+        <package name="snapper"/>
+        <package name="snapper-zypp-plugin"/>
+        <package name="grub2-snapper-plugin"/>
     </packages>
     <packages type="image"> 
         <package name="m1n1"/>
@@ -98,8 +107,6 @@
 				<package name="alsa-ucm-conf-asahi"/>
 				<package name="pipewire"/>
 				<package name="wireplumber"/>
-				<package name="libopenh264-7"/>
-				<package name="gstreamer-plugin-openh264"/>
     </packages>
     <packages type="image" profiles="Tumbleweed-KDE"> 
 				<package name="patterns-kde-kde_plasma"/>
@@ -112,6 +119,8 @@
 				<package name="hicolor-icon-theme-branding-openSUSE"/>
 				<package name="opensuse-welcome"/>
 				<package name="mozilla-openh264"/>
+				<package name="libopenh264-7"/>
+				<package name="gstreamer-plugin-openh264"/>
 				<package name="partitionmanager"/>
 				<package name="ark"/>
 				<package name="spectacle"/>
