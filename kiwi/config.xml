@@ -68,6 +68,7 @@
         <package name="ntp"/>
         <package name="pciutils"/>
         <package name="kernel-asahi"/>
+        <package name="dtb-apple"/>
 				<package name="kernel-firmware-all"/>
 				<package name="lzfse"/>
 				<package name="plymouth"/>
@@ -84,6 +85,8 @@
         <package name="uboot-asahi"/>
         <package name="asahi-scripts"/>
 				<package name="asahi-fwextract"/>
+				<package name="asahi-fwupdate"/>
+        <package name="update-m1n1"/>
 				<package name="speakersafetyd"/>
         <package name="Mesa"/>
         <package name="Mesa-dri"/>
