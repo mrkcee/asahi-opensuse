@@ -19,8 +19,8 @@ rm -f /var/lib/systemd/random-seed
 #======================================
 # Delete & lock the root user password
 #--------------------------------------
-#passwd -d root
-#passwd -l root
+passwd -d root
+passwd -l root
 
 #======================================
 # Setup default services
