@@ -42,12 +42,31 @@
 				<source path="dir:///home/mrkcee/development/asahi-opensuse/repo/">
 				</source>
 		</repository>
-    <packages type="bootstrap" profiles="Tumbleweed" patternType="plusRecommended">
+    <packages type="bootstrap" patternType="plusRecommended">
+        <package name="which"/>
+	<package name="gawk"/>
+	<package name="sed"/>
+	<package name="gzip"/>
+	<package name="diffutils"/>
+	<package name="grep"/>
+	<package name="coreutils"/>
+        <package name="suse-module-tools-scriptlets"/>
+	<package name="openSUSE-release"/>
+    </packages>
+    <packages type="image" patternType="plusRecommended">
+        <ignore name="patterns-base-x11"/>
+        <ignore name="patterns-base-x11_enhanced"/>
+        <ignore name="patterns-yast-x11_yast"/>
+        <ignore name="yast2-x11"/>
+        <ignore name="xterm"/>
+        <ignore name="xscreensaver"/>
+        <ignore name="tigervnc"/>
         <package name="patterns-base-base"/>
-        <package name="patterns-base-minimal_base"/>
         <package name="patterns-base-enhanced_base"/>
         <package name="patterns-base-documentation"/>
         <package name="patterns-base-apparmor"/>
+    </packages>
+    <packages type="image" patternType="onlyRequired">
         <package name="grub2"/>
         <package name="grub2-arm64-efi" arch="aarch64"/>
         <package name="grub2-branding-openSUSE"/>
@@ -68,19 +87,17 @@
         <package name="NetworkManager-branding-openSUSE"/>
         <package name="NetworkManager-tui"/>
         <package name="ntp"/>
+        <package name="git-core"/>
         <package name="pciutils"/>
-        <package name="kernel-asahi"/>
-        <package name="dtb-apple"/>
-				<package name="kernel-firmware-all"/>
-				<package name="lzfse"/>
-				<package name="plymouth"/>
-				<package name="plymouth-branding-openSUSE"/>
-				<package name="plymouth-dracut"/>
-				<package name="plymouth-theme-bgrt"/>
-				<package name="plymouth-theme-spinner"/>
-				<package name="yast2-firstboot"/>
-				<package name="systemd-zram-service"/>
-				<package name="neofetch"/>
+	<package name="lzfse"/>
+	<package name="plymouth"/>
+	<package name="plymouth-branding-openSUSE"/>
+	<package name="plymouth-dracut"/>
+	<package name="plymouth-theme-bgrt"/>
+        <package name="plymouth-theme-spinner"/>
+	<package name="yast2-firstboot"/>
+	<package name="systemd-zram-service"/>
+	<package name="neofetch"/>
         <!-- btrfs -->
         <package name="btrfsprogs"/>
         <package name="btrfsmaintenance"/>
@@ -88,59 +105,57 @@
         <package name="snapper-zypp-plugin"/>
         <package name="grub2-snapper-plugin"/>
     </packages>
-    <packages type="image"> 
-        <package name="m1n1"/>
+    <packages type="image" patternType="onlyRequired"> 
+        <package name="kernel-asahi"/>
+        <package name="dtb-apple"/>
         <package name="uboot-asahi"/>
+        <package name="asahi-bless"/>
         <package name="asahi-scripts"/>
-				<package name="asahi-fwextract"/>
-				<package name="asahi-fwupdate"/>
+	<package name="asahi-fwextract"/>
+	<package name="asahi-fwupdate"/>
         <package name="update-m1n1"/>
-				<package name="speakersafetyd"/>
+	<package name="speakersafetyd"/>
         <package name="Mesa"/>
         <package name="Mesa-dri"/>
         <package name="Mesa-dri-asahi"/>
-				<!-- lsp-plugins >= 1.2.14 -->
-				<package name="lsp-plugins"/>
-				<package name="bankstown-lv2"/>
-				<package name="asahi-audio"/>
-				<package name="alsa-ucm-conf-asahi"/>
-				<package name="pipewire"/>
-				<package name="wireplumber"/>
+	<!-- lsp-plugins >= 1.2.14 -->
+	<package name="lsp-plugins"/>
+	<package name="lv2-lsp-plugins"/>
+	<package name="bankstown-lv2"/>
+	<package name="asahi-audio"/>
+	<package name="alsa-ucm-conf-asahi"/>
+	<package name="alsa-ucm-conf"/>
+	<package name="pipewire"/>
+	<package name="pipewire-alsa"/>
+	<package name="pipewire-pulseaudio"/>
+	<package name="wireplumber"/>
     </packages>
-    <packages type="image" profiles="Tumbleweed-KDE"> 
-				<package name="patterns-kde-kde_plasma"/>
-				<package name="patterns-kde-kde_yast"/>
-				<package name="plasma6-branding-openSUSE"/>
-				<package name="konsole"/>
-				<package name="sddm"/>
-				<package name="sddm-branding-openSUSE"/>
-				<package name="sddm-qt6-branding-openSUSE"/>
-				<package name="hicolor-icon-theme-branding-openSUSE"/>
-				<package name="opensuse-welcome"/>
-				<package name="mozilla-openh264"/>
-				<package name="libopenh264-7"/>
-				<package name="gstreamer-plugin-openh264"/>
-				<package name="partitionmanager"/>
-				<package name="ark"/>
-				<package name="spectacle"/>
-				<package name="kcalc"/>
-				<package name="kamoso"/>
-				<package name="kolourpaint"/>
-				<package name="filelight"/>
-				<package name="gwenview"/>
-				<package name="okular"/>
-				<package name="libreoffice"/>
-				<package name="libreoffice-writer"/>
-				<package name="libreoffice-calc"/>
-				<package name="libreoffice-impress"/>
-				<package name="libreoffice-qt5"/>
-				<package name="libreoffice-icon-themes"/>
-				<package name="libreoffice-branding-openSUSE"/>
+    <packages type="image" profiles="Tumbleweed-KDE" patternType="onlyRequired"> 
+        <ignore name="plasma6-session-x11"/>
+	<package name="patterns-kde-kde_plasma"/>
+	<package name="kdeplasma6-addons"/>
+	<package name="opensuse-welcome"/>
+	<package name="plasma6-branding-openSUSE"/>
+	<package name="sddm-kcm6"/>
+	<package name="sddm-qt6"/>
+	<package name="sddm-qt6-branding-openSUSE"/>
+	<package name="hicolor-icon-theme-branding-openSUSE"/>
+	<package name="mozilla-openh264"/>
+	<package name="libopenh264-7"/>
+	<package name="gstreamer-plugin-openh264"/>
+	<package name="konsole"/>
+	<package name="MozillaFirefox"/>
+	<package name="gwenview"/>
+	<package name="ark"/>
+	<package name="dolphin"/>
+	<package name="partitionmanager"/>
+	<package name="kipi-plugins"/>
+	<package name="okular"/>
+	<package name="spectacle"/>
+	<package name="gwenview"/>
+	<package name="kcalc"/>
+	<package name="kate"/>
+	<package name="skanlite"/>
+	<package name="avahi"/>
     </packages>
-		<packages type="uninstall">
-				<package name="xterm"/>
-				<package name="tigervnc"/>
-				<package name="libXvnc1"/>
-				<package name="vlc"/>
-		</packages>
 </image>
