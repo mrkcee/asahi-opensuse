@@ -124,7 +124,6 @@
 	<package name="bankstown-lv2"/>
 	<package name="asahi-audio"/>
 	<package name="alsa-ucm-conf-asahi"/>
-	<package name="alsa-ucm-conf"/>
 	<package name="pipewire"/>
 	<package name="pipewire-alsa"/>
 	<package name="pipewire-pulseaudio"/>
@@ -157,5 +156,12 @@
 	<package name="kate"/>
 	<package name="skanlite"/>
 	<package name="avahi"/>
+	<package name="kwrite"/>
+	<package name="kamoso"/>
+	<package name="google-roboto-fonts"/>
+	<package name="google-roboto-mono-fonts"/>
+	<package name="google-roboto-slab-fonts"/>
+	<package name="google-noto-sans-cjk-fonts"/>
+	<package name="libqt5-qtwayland"/>
     </packages>
 </image>
