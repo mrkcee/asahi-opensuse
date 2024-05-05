@@ -15,19 +15,18 @@ I am currently running openSUSE Tumbleweed on an Apple Macbook Air M1 (2020).
 
 ## Todo
 
-- [ ] Create meta packages
-- [ ] Cleanup spec files
+- [X] Create meta packages
+- [X] Cleanup spec files
   - [X] Add post install and uninstall scripts to kernel spec
 - [ ] Automate post-installation configs
-  - [ ] resize2fs
   - [ ] Swap file creation
 
 ## HOWTO
 
-The initial creation of the packages and installation image was done in openSUSE Tumbleweed running in macOS via UTM. All updates to the packages were performed in the actual openSUSE Tumbleweed installation.
+The initial creation of the packages and installation image was done in openSUSE Tumbleweed running in macOS via UTM. All updates to the packages were performed in the actual openSUSE Tumbleweed installation via local OBS.
 
 In a nutshell, the flow of the building process is:
-- Generate packages using the provided spec files (rpmbuild)
+- Generate packages using the provided spec files (refer to ![OBS project](https://build.opensuse.org/project/show/home:mrkcee))
 - Create local repository (createrepo)
 - Configure installation image by editing kiwi config files
 - Generate raw image using kiwi-ng script
@@ -43,7 +42,7 @@ Good luck :D
 - Fedora Asahi SIG Team - basis of some specs
 - tpwrules / NixOS on Apple Silicon - basis of some specs
 - openSUSE maintainers - basis of some specs
-- SUSE - for openSUSE
+- SUSE - for openSUSE and Open Build Service
 - Asahi Linux team and contributors - for creating Asahi Linux and other modules
 - Folks who have provided their feedback and constructive comments
 
