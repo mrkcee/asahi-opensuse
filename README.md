@@ -26,7 +26,7 @@ I am currently running openSUSE Tumbleweed on an Apple Macbook Air M1 (2020).
 The initial creation of the packages and installation image was done in openSUSE Tumbleweed running in macOS via UTM. All updates to the packages were performed in the actual openSUSE Tumbleweed installation via local OBS.
 
 In a nutshell, the flow of the building process is:
-- Generate packages using the provided spec files (refer to ![OBS project](https://build.opensuse.org/project/show/home:mrkcee))
+- Generate packages using the provided spec files (refer to [OBS project](https://build.opensuse.org/project/show/home:mrkcee))
 - Create local repository (createrepo)
 - Configure installation image by editing kiwi config files
 - Generate raw image using kiwi-ng script
