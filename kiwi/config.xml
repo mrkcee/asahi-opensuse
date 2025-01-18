@@ -24,6 +24,7 @@
 		<volume name="opt"/>
 		<volume name="var" copy_on_write="false"/>
 		<volume name="usr/local"/>
+		<volume name="tmp"/>
             </systemdisk>
             <oemconfig>
 	        <oem-resize>false</oem-resize>
