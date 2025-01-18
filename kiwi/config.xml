@@ -4,7 +4,7 @@
     <description type="system">
         <author>Mark</author>
         <contact>me@email.com</contact>
-        <specification>openSUSE for Apple Silicon</specification>
+        <specification>Tumbleweed for Apple Silicon</specification>
     </description>
     <preferences>
         <version>0.1.0</version>
@@ -13,18 +13,22 @@
         <bootloader-theme>openSUSE</bootloader-theme>
         <locale>en_US</locale>
         <keytable>us</keytable>
-				<timezone>UTC</timezone>
+	<timezone>UTC</timezone>
         <rpm-check-signatures>true</rpm-check-signatures>
-        <type image="oem" filesystem="btrfs" fsmountoptions="x-systemd.growfs,compress=zstd:1" kernelcmdline="splash=silent quiet security=apparmor" firmware="uefi" bootpartition="true" bootpartsize="1024" bootfilesystem="ext4" efipartsize="512" target_blocksize="4096" btrfs_root_is_subvolume="true" btrfs_set_default_volume="false" rootfs_label="opensuse">
+        <type image="oem" filesystem="btrfs" fsmountoptions="x-systemd.growfs,compress=zstd:1" kernelcmdline="splash=silent quiet security=apparmor" firmware="uefi" bootpartition="true" bootpartsize="1024" bootfilesystem="ext4" efipartsize="512" target_blocksize="4096" btrfs_root_is_snapshot="true" btrfs_set_default_volume="true" rootfs_label="opensuse">
             <bootloader name="grub2" console="gfxterm" timeout="3"/>
             <systemdisk name="opensuse">
-                <volume name="@root=root"/>
-                <volume name="home" parent="/"/>
+                <volume name="home"/>
+		<volume name="root"/>
+		<volume name="srv"/>
+		<volume name="opt"/>
+		<volume name="var" copy_on_write="false"/>
+		<volume name="usr/local"/>
             </systemdisk>
             <oemconfig>
-								<oem-resize>false</oem-resize>
+	        <oem-resize>false</oem-resize>
                 <oem-skip-verify>true</oem-skip-verify>
-						</oemconfig>
+	    </oemconfig>
         </type>
     </preferences>
     <users>
@@ -38,10 +42,9 @@
     </profiles>
     <include from="this://./repos.xml"/>
     <!-- Asahi repo -->
-		<repository type="rpm-md" alias="asahi"  priority="1" repository_gpgcheck="false" package_gpgcheck="false">
-				<source path="dir:///home/mrkcee/development/asahi-opensuse/repo/">
-				</source>
-		</repository>
+    <repository type="rpm-md" alias="asahi" priority="1" repository_gpgcheck="false" package_gpgcheck="false" imageinclude="true">
+	<source path="http://download.opensuse.org/repositories/home:/mrkcee/openSUSE_Factory_ARM/"/>
+    </repository>
     <packages type="bootstrap" patternType="plusRecommended">
         <package name="which"/>
 	<package name="gawk"/>
@@ -80,11 +83,11 @@
         <package name="dracut-kiwi-oem-repart"/>
         <package name="zypper-lifecycle-plugin"/>
         <package name="zypper-needs-restarting"/>
-        <package name="haveged"/>
         <package name="tar"/>
         <package name="7zip"/>
         <package name="NetworkManager"/>
         <package name="NetworkManager-branding-openSUSE"/>
+	<package name="NetworkManager-dns-dnsmasq"/>
         <package name="NetworkManager-tui"/>
         <package name="ntp"/>
         <package name="git-core"/>
@@ -96,7 +99,8 @@
 	<package name="plymouth-theme-bgrt"/>
         <package name="plymouth-theme-spinner"/>
 	<package name="yast2-firstboot"/>
-	<package name="systemd-zram-service"/>
+	<package name="systemd-homed"/>
+	<package name="systemd-network"/>
 	<package name="neofetch"/>
         <!-- btrfs -->
         <package name="btrfsprogs"/>
@@ -118,8 +122,6 @@
         <package name="Mesa"/>
         <package name="Mesa-dri"/>
         <package name="Mesa-dri-asahi"/>
-	<!-- lsp-plugins >= 1.2.14 -->
-	<package name="lsp-plugins"/>
 	<package name="lv2-lsp-plugins"/>
 	<package name="bankstown-lv2"/>
 	<package name="asahi-audio"/>
@@ -139,11 +141,9 @@
 	<package name="sddm-qt6"/>
 	<package name="sddm-qt6-branding-openSUSE"/>
 	<package name="hicolor-icon-theme-branding-openSUSE"/>
-	<package name="mozilla-openh264"/>
 	<package name="libopenh264-7"/>
 	<package name="gstreamer-plugin-openh264"/>
 	<package name="konsole"/>
-	<package name="MozillaFirefox"/>
 	<package name="gwenview"/>
 	<package name="ark"/>
 	<package name="dolphin"/>
@@ -162,6 +162,10 @@
 	<package name="google-roboto-mono-fonts"/>
 	<package name="google-roboto-slab-fonts"/>
 	<package name="google-noto-sans-cjk-fonts"/>
+	<package name="jetbrains-mono-fonts"/>
+	<package name="fira-code-fonts"/>
 	<package name="libqt5-qtwayland"/>
+	<package name="flatpak"/>
+	<package name="cups"/>
     </packages>
 </image>
