@@ -102,6 +102,8 @@
 	<package name="yast2-firstboot"/>
 	<package name="systemd-homed"/>
 	<package name="systemd-network"/>
+	<package name="systemd-default-settings-branding-openSUSE"/>
+	<package name="systemd-presets-branding-openSUSE"/>
 	<package name="neofetch"/>
         <!-- btrfs -->
         <package name="btrfsprogs"/>
