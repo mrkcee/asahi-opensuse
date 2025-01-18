@@ -28,7 +28,6 @@ passwd -l root
 systemctl enable NetworkManager.service
 systemctl enable chronyd.service
 systemctl enable sddm.service
-systemctl enable zramswap.service
 
 mkdir -p /var/log/journal
 
