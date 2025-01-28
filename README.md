@@ -13,13 +13,6 @@ I am currently running openSUSE Tumbleweed on an Apple Macbook Air M1 (2020).
 
 ![openSUSE Tumbleweed on MBA M1](./images/asahi-tumbleweed-mba-m1.png)
 
-## Todo
-
-- [X] Create meta packages
-- [X] Cleanup spec files
-  - [X] Add post install and uninstall scripts to kernel spec
-- [ ] Automate post-installation configs
-  - [ ] Swap file creation
 
 ## HOWTO
 
@@ -42,7 +35,8 @@ Good luck :D
 - Fedora Asahi SIG Team - basis of some specs
 - tpwrules / NixOS on Apple Silicon - basis of some specs
 - openSUSE maintainers - basis of some specs
-- SUSE - for openSUSE and Open Build Service
+- openSUSE project - for openSUSE Tumblweed, KIWI, Snapper, and Open Build Service
+- SUSE and others - for sponsoring openSUSE
 - Asahi Linux team and contributors - for creating Asahi Linux and other modules
 - Folks who have provided their feedback and constructive comments
 
