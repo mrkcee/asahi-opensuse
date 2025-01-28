@@ -15,7 +15,7 @@
         <keytable>us</keytable>
 	<timezone>UTC</timezone>
         <rpm-check-signatures>true</rpm-check-signatures>
-        <type image="oem" filesystem="btrfs" fsmountoptions="x-systemd.growfs,compress=zstd:1" kernelcmdline="splash=silent quiet security=apparmor" firmware="uefi" bootpartition="true" bootpartsize="1024" bootfilesystem="ext4" efipartsize="512" target_blocksize="4096" btrfs_root_is_snapshot="true" btrfs_set_default_volume="true" rootfs_label="opensuse">
+        <type image="oem" filesystem="btrfs" fsmountoptions="x-systemd.growfs,compress=zstd:1" kernelcmdline="splash=silent quiet security=apparmor" firmware="uefi" bootpartition="false" efipartsize="512" target_blocksize="4096" btrfs_root_is_snapshot="true" btrfs_set_default_volume="true" rootfs_label="opensuse">
             <bootloader name="grub2" console="gfxterm" timeout="3"/>
             <systemdisk name="opensuse">
                 <volume name="home"/>
@@ -56,6 +56,7 @@
 	<package name="coreutils"/>
         <package name="suse-module-tools-scriptlets"/>
 	<package name="openSUSE-release"/>
+	<package name="openSUSE-release-dvd"/>
     </packages>
     <packages type="image" patternType="plusRecommended">
         <ignore name="patterns-base-x11"/>
@@ -90,7 +91,6 @@
         <package name="NetworkManager-branding-openSUSE"/>
 	<package name="NetworkManager-dns-dnsmasq"/>
         <package name="NetworkManager-tui"/>
-        <package name="ntp"/>
         <package name="git-core"/>
         <package name="pciutils"/>
 	<package name="lzfse"/>
@@ -118,6 +118,7 @@
         <package name="uboot-asahi"/>
         <package name="asahi-bless"/>
         <package name="asahi-scripts"/>
+	<package name="asahi-utility-scripts"/>
 	<package name="asahi-fwextract"/>
 	<package name="asahi-fwupdate"/>
         <package name="update-m1n1"/>
@@ -150,6 +151,7 @@
 	<package name="gwenview"/>
 	<package name="ark"/>
 	<package name="dolphin"/>
+	<package name="filelight"/>
 	<package name="partitionmanager"/>
 	<package name="kipi-plugins"/>
 	<package name="okular"/>
