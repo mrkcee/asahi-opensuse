@@ -87,6 +87,7 @@
         <package name="zypper-needs-restarting"/>
         <package name="tar"/>
         <package name="7zip"/>
+	<package name="util-linux"/>
         <package name="NetworkManager"/>
         <package name="NetworkManager-branding-openSUSE"/>
 	<package name="NetworkManager-dns-dnsmasq"/>
@@ -169,6 +170,7 @@
 	<package name="google-noto-sans-cjk-fonts"/>
 	<package name="jetbrains-mono-fonts"/>
 	<package name="fira-code-fonts"/>
+	<package name="ubuntu-fonts"/>
 	<package name="libqt5-qtwayland"/>
 	<package name="flatpak"/>
 	<package name="cups"/>
