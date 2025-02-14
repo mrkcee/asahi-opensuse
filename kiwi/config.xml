@@ -15,7 +15,7 @@
         <keytable>us</keytable>
 	<timezone>UTC</timezone>
         <rpm-check-signatures>true</rpm-check-signatures>
-        <type image="oem" filesystem="btrfs" fsmountoptions="x-systemd.growfs,compress=zstd:1" kernelcmdline="splash=silent quiet security=apparmor" firmware="uefi" bootpartition="false" efipartsize="512" target_blocksize="4096" btrfs_root_is_snapshot="true" btrfs_set_default_volume="true" rootfs_label="opensuse">
+        <type image="oem" filesystem="btrfs" fsmountoptions="x-systemd.growfs,compress=zstd:1" kernelcmdline="splash=silent quiet security=selinux" firmware="uefi" bootpartition="false" efipartsize="512" target_blocksize="4096" btrfs_root_is_snapshot="true" btrfs_set_default_volume="true" rootfs_label="opensuse">
             <bootloader name="grub2" console="gfxterm" timeout="3"/>
             <systemdisk name="opensuse">
                 <volume name="home"/>
@@ -69,7 +69,7 @@
         <package name="patterns-base-base"/>
         <package name="patterns-base-enhanced_base"/>
         <package name="patterns-base-documentation"/>
-        <package name="patterns-base-apparmor"/>
+        <package name="patterns-base-selinux"/>
     </packages>
     <packages type="image" patternType="onlyRequired">
         <package name="grub2"/>
