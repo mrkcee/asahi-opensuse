@@ -124,11 +124,13 @@
 	<package name="asahi-fwupdate"/>
         <package name="update-m1n1"/>
 	<package name="speakersafetyd"/>
+	<package name="system-user-speakersafetyd"/>
         <package name="Mesa"/>
         <package name="Mesa-dri"/>
         <package name="Mesa-dri-asahi"/>
 	<package name="lv2-lsp-plugins"/>
 	<package name="bankstown-lv2"/>
+	<package name="triforce-lv2"/>
 	<package name="asahi-audio"/>
 	<package name="alsa-ucm-conf-asahi"/>
 	<package name="pipewire"/>
