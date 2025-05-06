@@ -9,7 +9,7 @@ _**Please use at your own risk**_.
 
 ## Current State
 
-I am currently running openSUSE Tumbleweed on an Apple Macbook Air M1 (2020).
+I am currently running openSUSE Tumbleweed on an Apple Macbook Air M1 (2020) as of May 2025.
 
 ![openSUSE Tumbleweed on MBA M1](./images/asahi-tumbleweed-mba-m1.png)
 
