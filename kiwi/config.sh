@@ -28,6 +28,7 @@ passwd -l root
 systemctl enable NetworkManager.service
 systemctl enable chronyd.service
 systemctl enable sddm.service
+systemctl enable systemd-firstboot.service
 
 mkdir -p /var/log/journal
 
@@ -36,7 +37,7 @@ systemctl set-default graphical.target
 #======================================
 # Enable yast2-firstboot
 #--------------------------------------
-touch /var/lib/YaST2/reconfig_system
+# touch /var/lib/YaST2/reconfig_system
 
 #======================================
 # Generate boot.bin
