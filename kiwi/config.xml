@@ -100,6 +100,7 @@
 	<package name="plymouth-dracut"/>
 	<package name="plymouth-theme-bgrt"/>
         <package name="plymouth-theme-spinner"/>
+	<package name="systemd-firstboot"/>
 	<package name="systemd-homed"/>
 	<package name="systemd-network"/>
 	<package name="systemd-default-settings-branding-openSUSE"/>
