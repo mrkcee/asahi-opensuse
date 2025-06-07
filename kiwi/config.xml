@@ -100,12 +100,11 @@
 	<package name="plymouth-dracut"/>
 	<package name="plymouth-theme-bgrt"/>
         <package name="plymouth-theme-spinner"/>
-	<package name="yast2-firstboot"/>
 	<package name="systemd-homed"/>
 	<package name="systemd-network"/>
 	<package name="systemd-default-settings-branding-openSUSE"/>
 	<package name="systemd-presets-branding-openSUSE"/>
-	<package name="neofetch"/>
+	<package name="fastfetch"/>
         <!-- btrfs -->
         <package name="btrfsprogs"/>
         <package name="btrfsmaintenance"/>
@@ -118,8 +117,10 @@
         <package name="dtb-apple"/>
         <package name="uboot-asahi"/>
         <package name="asahi-bless"/>
+	<package name="asahi-btsync"/>
+	<package name="asahi-nvram"/>
+	<package name="asahi-wifisync"/>
         <package name="asahi-scripts"/>
-	<package name="asahi-utility-scripts"/>
 	<package name="asahi-fwextract"/>
 	<package name="asahi-fwupdate"/>
         <package name="update-m1n1"/>
@@ -164,7 +165,6 @@
 	<package name="kate"/>
 	<package name="skanlite"/>
 	<package name="avahi"/>
-	<package name="kwrite"/>
 	<package name="kamoso"/>
 	<package name="google-roboto-fonts"/>
 	<package name="google-roboto-mono-fonts"/>
