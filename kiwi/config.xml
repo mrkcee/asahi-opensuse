@@ -15,7 +15,7 @@
         <keytable>us</keytable>
 	<timezone>UTC</timezone>
         <rpm-check-signatures>true</rpm-check-signatures>
-        <type image="oem" filesystem="btrfs" fsmountoptions="x-systemd.growfs,compress=zstd:1" kernelcmdline="splash=silent quiet security=selinux" firmware="uefi" bootpartition="false" efipartsize="512" target_blocksize="4096" btrfs_root_is_snapshot="true" btrfs_set_default_volume="true" rootfs_label="opensuse">
+        <type image="oem" filesystem="btrfs" fsmountoptions="x-systemd.growfs,compress=zstd:1" kernelcmdline="splash=silent quiet security=selinux" firmware="uefi" bootpartition="false" efipartsize="1024" target_blocksize="4096" btrfs_root_is_snapshot="true" btrfs_set_default_volume="true" rootfs_label="tumbleweed">
             <bootloader name="grub2" console="gfxterm" timeout="3"/>
             <systemdisk name="opensuse">
                 <volume name="home"/>
@@ -43,18 +43,18 @@
     </profiles>
     <include from="this://./repos.xml"/>
     <!-- Asahi repo -->
-    <repository type="rpm-md" alias="asahi" priority="1" repository_gpgcheck="false" package_gpgcheck="false" imageinclude="true">
+    <repository type="rpm-md" alias="asahi" priority="1" repository_gpgcheck="false" package_gpgcheck="false" imageinclude="false">
 	<source path="http://download.opensuse.org/repositories/home:/mrkcee/openSUSE_Factory_ARM/"/>
     </repository>
     <packages type="bootstrap" patternType="plusRecommended">
-        <package name="which"/>
+    <package name="which"/>
 	<package name="gawk"/>
 	<package name="sed"/>
 	<package name="gzip"/>
 	<package name="diffutils"/>
 	<package name="grep"/>
 	<package name="coreutils"/>
-        <package name="suse-module-tools-scriptlets"/>
+    <package name="suse-module-tools-scriptlets"/>
 	<package name="openSUSE-release"/>
 	<package name="openSUSE-release-dvd"/>
     </packages>
@@ -101,11 +101,12 @@
 	<package name="plymouth-theme-bgrt"/>
         <package name="plymouth-theme-spinner"/>
 	<package name="systemd-firstboot"/>
-	<package name="systemd-homed"/>
 	<package name="systemd-network"/>
 	<package name="systemd-default-settings-branding-openSUSE"/>
 	<package name="systemd-presets-branding-openSUSE"/>
 	<package name="fastfetch"/>
+	<package name="cups"/>
+	<package name="btop"/>
         <!-- btrfs -->
         <package name="btrfsprogs"/>
         <package name="btrfsmaintenance"/>
@@ -176,6 +177,7 @@
 	<package name="ubuntu-fonts"/>
 	<package name="libqt5-qtwayland"/>
 	<package name="flatpak"/>
-	<package name="cups"/>
+	<package name="gtk4-branding-upstream"/>
+	<package name="wallpaper-branding-openSUSE"/>
     </packages>
 </image>
