@@ -15,9 +15,9 @@
         <keytable>us</keytable>
 	<timezone>UTC</timezone>
         <rpm-check-signatures>true</rpm-check-signatures>
-        <type image="oem" filesystem="btrfs" fsmountoptions="x-systemd.growfs,compress=zstd:1" kernelcmdline="splash=silent quiet security=selinux" firmware="uefi" bootpartition="false" efipartsize="1024" target_blocksize="4096" btrfs_root_is_snapshot="true" btrfs_set_default_volume="true" rootfs_label="tumbleweed">
+        <type image="oem" filesystem="btrfs" fsmountoptions="x-systemd.growfs,compress=zstd:1" kernelcmdline="splash=silent quiet security=selinux" firmware="uefi" bootpartition="false" efipartsize="1536" target_blocksize="4096" btrfs_root_is_snapshot="true" btrfs_set_default_volume="true" rootfs_label="tumbleweed">
             <bootloader name="grub2" console="gfxterm" timeout="3"/>
-            <systemdisk name="opensuse">
+            <systemdisk name="tumbleweed">
                 <volume name="home"/>
 		<volume name="root"/>
 		<volume name="srv"/>
@@ -72,9 +72,8 @@
         <package name="patterns-base-selinux"/>
     </packages>
     <packages type="image" patternType="onlyRequired">
-        <package name="grub2"/>
-        <package name="grub2-arm64-efi" arch="aarch64"/>
-        <package name="grub2-branding-openSUSE"/>
+        <package name="systemd-boot"/>
+		<package name="sdbootutil"/>
         <package name="branding-openSUSE"/>
         <package name="squashfs"/>
         <package name="cron"/>
@@ -112,7 +111,6 @@
         <package name="btrfsmaintenance"/>
         <package name="snapper"/>
         <package name="snapper-zypp-plugin"/>
-        <package name="grub2-snapper-plugin"/>
     </packages>
     <packages type="image" patternType="onlyRequired"> 
         <package name="kernel-asahi"/>
@@ -131,6 +129,8 @@
         <package name="Mesa"/>
         <package name="Mesa-dri"/>
         <package name="Mesa-dri-asahi"/>
+		<package name="Mesa-libRusticlOpenCL"/>
+		<package name="Mesa-lib-vulkan-device-select"/>
 	<package name="lv2-lsp-plugins"/>
 	<package name="bankstown-lv2"/>
 	<package name="triforce-lv2"/>
@@ -179,5 +179,8 @@
 	<package name="flatpak"/>
 	<package name="gtk4-branding-upstream"/>
 	<package name="wallpaper-branding-openSUSE"/>
+	<package name="plasma6-vault"/>
+	<package name="plasma6-vault-backend-cryfs"/>
+	<package name="plasma6-vault-backend-gocryptfs"/>
     </packages>
 </image>
